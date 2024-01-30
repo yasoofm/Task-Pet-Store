@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.petsstore.composables.App
 import com.example.petsstore.composables.PetsList
 import com.example.petsstore.ui.theme.PetsStoreTheme
 import com.example.petsstore.viewmodel.PetViewModel
@@ -25,26 +26,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    val viewModel: PetViewModel = viewModel()
-                    PetsList(viewModel = viewModel)
+                    App()
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    PetsStoreTheme {
-        Greeting("Android")
     }
 }
